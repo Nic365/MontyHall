@@ -21,27 +21,50 @@ class Game:
     def check_result(self):
         if self.choice == 1:
             if self.door1 == 1:
-                print("You win")
+                return 1
             else:
-                print("You loose")
+                return 0
         elif self.choice == 2:
             if self.door2 == 1:
-                print("You win")
+                return 1
             else:
-                print("You loose")
+                return 0
         elif self.choice == 3:
             if self.door3 == 1:
-                print("You win")
+                return 1
             else:
-                print("You loose")
-
-g1 = Game()
-
-print(g1.door1)
-print(g1.door2)
-print(g1.door3)
+                return 0
 
 
-g1.make_choice(1)
+    def remove_door(self):
+        None
 
-g1.check_result()
+
+# test
+
+
+
+
+rounds = 200
+
+print("No change rounds")
+win, lost = 0, 0
+for i in range(1, rounds):
+    g1 = Game()
+    print(g1.door1, g1.door2, g1.door3)
+    g1.make_choice(1)
+    g1.remove_door()
+
+    if g1.check_result():
+        win+=1
+    else:
+        lost+=1
+
+print("Win:", win)
+print("lost:", lost)
+print(round(100 * win/(win+lost),2),"%")
+
+
+
+#Percentage = 100 * float(part)/float(whole)
+
