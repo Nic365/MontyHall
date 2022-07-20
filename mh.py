@@ -38,12 +38,11 @@ class Game:
 
     def remove_door(self):
         None
+        # retirer une porte qui n'est pas le tresor ni celle choisit
+        #  comment ?
 
 
 # test
-
-
-
 
 rounds = 1000
 
