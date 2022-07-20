@@ -2,38 +2,18 @@ import random
 
 class Game:
     def __init__(self):
-        self.door1 = 0
-        self.door2 = 0
-        self.door3 = 0
-
-        tresor = random.randint(1,3)
-
-        if tresor == 1:
-            self.door1 = 1
-        elif tresor == 2:
-            self.door2 = 1
-        elif tresor == 3:
-            self.door3 = 1
+        self.tresor = random.randint(0,2)
+        self.doors = [0, 0, 0]
+        self.doors[self.tresor] = 1
 
     def make_choice(self, choice):
         self.choice = choice
 
     def check_result(self):
-        if self.choice == 1:
-            if self.door1 == 1:
-                return 1
-            else:
-                return 0
-        elif self.choice == 2:
-            if self.door2 == 1:
-                return 1
-            else:
-                return 0
-        elif self.choice == 3:
-            if self.door3 == 1:
-                return 1
-            else:
-                return 0
+        if self.doors[self.choice] == 1:
+            return 1
+        else:
+            return 0
 
 
     def remove_door(self):
@@ -44,7 +24,11 @@ class Game:
 
 # test
 
-rounds = 1000
+g1 = Game()
+g1.make_choice(1)
+print(g1.check_result())
+
+""" rounds = 1000
 
 print("No change rounds")
 win, lost = 0, 0
@@ -62,7 +46,7 @@ for i in range(1, rounds):
 print("Win:", win)
 print("lost:", lost)
 print(round(100 * win/(win+lost),2),"%")
-
+ """
 #Percentage = 100 * float(part)/float(whole)
 
 
