@@ -45,13 +45,13 @@ class Game:
 
 
 
-rounds = 200
+rounds = 1000
 
 print("No change rounds")
 win, lost = 0, 0
 for i in range(1, rounds):
     g1 = Game()
-    print(g1.door1, g1.door2, g1.door3)
+    #print(g1.door1, g1.door2, g1.door3)
     g1.make_choice(1)
     g1.remove_door()
 
@@ -64,7 +64,6 @@ print("Win:", win)
 print("lost:", lost)
 print(round(100 * win/(win+lost),2),"%")
 
-
-
 #Percentage = 100 * float(part)/float(whole)
+
 
