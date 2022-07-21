@@ -41,7 +41,11 @@ def bunch_of_games(howmany, switch):
     print(round(100 * win/(win+lost),2),"%")
 
 
+# Testing 
+
+# print("Just to see one game")
 #just_one_game()
+
 print("let's see a thousand games with no change")
 bunch_of_games(1000, 0)
 
