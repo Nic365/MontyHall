@@ -46,8 +46,10 @@ def bunch_of_games(howmany, switch):
 # print("Just to see one game")
 #just_one_game()
 
-print("let's see a thousand games with no change")
+print("Si je ne change jamais de porte:")
+print("-------------------------------")
 bunch_of_games(1000, 0)
 
-print("let's see a thousand games with F**** change")
+print("\nSi je change toujours de porte:")
+print("-------------------------------")
 bunch_of_games(1000, 1)
