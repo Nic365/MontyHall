@@ -37,10 +37,9 @@ class Game:
 
 # could be nice to have a print function
 # to use like print(g1) but heh
+"""
     def __str__(self):
-        return "[ " + ' , '.join(self.doors) + " ]"
-
-
-
+        return self.doors
+"""
 
 

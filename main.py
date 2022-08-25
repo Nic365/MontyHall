@@ -18,8 +18,6 @@ def just_one_game():
     else:
         print("boohoo")
 
-    #print(g1)
-
 def bunch_of_games(howmany, switch):
     win, lost = 0, 0
     for i in range(1, howmany):
@@ -46,10 +44,10 @@ def bunch_of_games(howmany, switch):
 # Testing 
 
 # print("Just to see one game")
-just_one_game()
+#just_one_game()
 
-#print("let's see a thousand games with no change")
-#bunch_of_games(1000, 0)
+print("let's see a thousand games with no change")
+bunch_of_games(1000, 0)
 
-#print("let's see a thousand games with F**** change")
-#bunch_of_games(1000, 1)
+print("let's see a thousand games with F**** change")
+bunch_of_games(1000, 1)
