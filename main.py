@@ -1,55 +1,54 @@
 from mymodule import Game
 import random
 
-# test 1 game
-def just_one_game(): 
-    g1 = Game()
-    print("new game:", g1.doors)
-    g1.make_choice(random.randint(0,2))
-    print("after choice:",g1.doors)
-    g1.remove_door()
-    print("after remove:",g1.doors)
-    g1.switch_choice()
-    print("after switch:",g1.doors)
-    print(g1.check_result())
+def play_single_game():
+    game = Game()
+    print("New game:", game.doors)
+    game.make_choice(random.randint(0, 2))
+    print("After choice:", game.doors)
+    game.remove_door()
+    print("After removing a door:", game.doors)
+    game.switch_choice()
+    print("After switching choice:", game.doors)
+    result = game.check_result()
+    print(result)
 
-    if g1.check_result():
-        print("youhoo")
+    if result:
+        print("Congratulations! You won!")
     else:
-        print("boohoo")
+        print("Sorry! You lost!")
 
-def bunch_of_games(howmany, switch):
-    win, lost = 0, 0
-    for i in range(1, howmany):
-        g1 = Game()
-        # choisit une porte au hasard
-        g1.make_choice(random.randint(0,2))
-        # retirer une porte
-        g1.remove_door()
-        # on veux-tu changer ? 
-        if switch:
-            g1.switch_choice()
-        # retenir le resultat
-        if g1.check_result():
-            win+=1
+def simulate_multiple_games(num_games, switch_choice):
+    wins = 0
+    losses = 0
+
+    for _ in range(num_games):
+        game = Game()
+        game.make_choice(random.randint(0, 2))
+        game.remove_door()
+
+        if switch_choice:
+            game.switch_choice()
+
+        if game.check_result():
+            wins += 1
         else:
-            lost+=1
-    
-    # stats
-    print("Win:", win)
-    print("lost:", lost)
-    print(round(100 * win/(win+lost),2),"%")
+            losses += 1
 
+    print("Wins:", wins)
+    print("Losses:", losses)
+    win_percentage = round(100 * wins / (wins + losses), 2)
+    print("Win percentage:", win_percentage, "%")
 
 # Testing 
 
-# print("Just to see one game")
-#just_one_game()
+# Uncomment the line below to see the steps and result of a single game
+# play_single_game()
 
-print("Si je ne change jamais de porte:")
+print("If I never switch my choice:")
 print("-------------------------------")
-bunch_of_games(1000, 0)
+simulate_multiple_games(1000, switch_choice=False)
 
-print("\nSi je change toujours de porte:")
+print("\nIf I always switch my choice:")
 print("-------------------------------")
-bunch_of_games(1000, 1)
+simulate_multiple_games(1000, switch_choice=True)
