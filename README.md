@@ -1,7 +1,6 @@
-# But
-Vérifier par expérimentation si c'est mieux de changer de porte ou pas
+# Pourquoi
+Parce que je veut vérifier si c'est vraiment mieux de changer de porte 🤷
 
 
-bon bon bon
 
 
